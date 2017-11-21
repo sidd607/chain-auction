@@ -1,0 +1,24 @@
+2017-08-10T18:27:56.613Z INFO    ConnectionProfileManager :constructor()             Created a new ConnectionProfileManager {"0":{"fs":{}}}$
+2017-08-10T18:27:56.632Z INFO    FSConnectionProfileStore :save()                    Saved connection profile defaultProfile {}$
+2017-08-10T18:27:56.633Z INFO    ConnectionProfileManager :connect()                 Connecting using defaultProfile {}$
+2017-08-10T18:27:56.635Z INFO    FSConnectionProfileStore :load()                    Loaded connection profile defaultProfile {"0":"{\n    \"type\": \"embedded\"\n}"}$
+2017-08-10T18:27:56.635Z INFO    ConnectionProfileManager :getConnectionManager()    Looking up a connection manager for profile {"0":"defaultProfile"}$
+2017-08-10T18:27:56.636Z INFO    FSConnectionProfileStore :load()                    Loaded connection profile defaultProfile {"0":"{\n    \"type\": \"embedded\"\n}"}$
+2017-08-10T18:28:05.923Z INFO    ConnectionProfileManager :getConnectionManager()    Using this connection manager  {"0":{"connectionProfileManager":{"connectionProfileStore":{"fs":{}}}}}$
+2017-08-10T18:28:05.934Z INFO    ModelManager             :info()                    
+    namespace org.hyperledger.composer.system
+
+    abstract asset Asset {  }
+
+    abstract participant Participant {   }
+
+    abstract transaction Transaction identified by transactionId{
+      o String transactionId
+      o DateTime timestamp
+    }
+
+    abstract event Event identified by eventId{
+      o String eventId
+      o DateTime timestamp
+    }
+ {}$

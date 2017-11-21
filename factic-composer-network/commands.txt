@@ -1,0 +1,3 @@
+To start the server ->
+composer-rest-server -p hlfv1 -n product -i admin -s adminpw -N never -w true
+

@@ -1,0 +1,17 @@
+2017-08-30T19:07:31.005Z INFO    ModelManager             :info()                    
+    namespace org.hyperledger.composer.system
+
+    abstract asset Asset {  }
+
+    abstract participant Participant {   }
+
+    abstract transaction Transaction identified by transactionId{
+      o String transactionId
+      o DateTime timestamp
+    }
+
+    abstract event Event identified by eventId{
+      o String eventId
+      o DateTime timestamp
+    }
+ {}$
