@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# Chain Auction
+Chain auction is a decentralized auction engine built on a Hyperledger Fabric Network.
+Hyperledger Fabric is an implementation of blockchain technology, leveraging familiar and proven technologies. It is a modular architecture allowing pluggable implementations of various function. It features powerful container technology to host any mainstream language for smart contracts development. Smart Contracts are defined on Hyperledger Fabric Composer.
 
-You can use the [editor on GitHub](https://github.com/sidd607/chain-auction/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Structure 
+`fabric-composer-network` contains files for defining the business network (Smart Contracts) for the application.
 
-### Markdown
+`auction-web` contains files for the web application built with React JS
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Running the Application
+### Fork the repository
+`$ git clone https://github.com/sidd607/chain-auction.git` 
+### Setting up the Fabric Nerwork
+Follow the steps from [Hyperledger Composer docs](https://hyperledger.github.io/composer/installing/development-tools.html) to setup a Fabric Network
+### Developing and deploying the Busines Network
+The Business Network definition consists of 3 major components
+- Model Files - Define the structure and realationship between model elements
+- Script Files - Implement the Business Logic for the application.
+- Access Control File - A set of access control rules that define the rights of different participants in the business network.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sidd607/chain-auction/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
