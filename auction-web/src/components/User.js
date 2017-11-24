@@ -50,7 +50,7 @@ class User extends Component {
     this.setState({ dialog_open: false, auction_asset: "" });
   };
 
-  get_user_details = () => {
+  get_user_details = (another_fun) => {
     var url = config.url + "Member/";
     fetch(url)
       .then(results => {
@@ -65,9 +65,10 @@ class User extends Component {
           tmp[result[i].email]["products"] = [];
         }
         this.setState({ user_map: tmp, users: user });
+	this.get_product_details();
       })
       .catch(error => {
-        alert("Something went Wrong");
+        alert("Something went Wrong" + error);
       });
   };
 
@@ -151,8 +152,7 @@ class User extends Component {
   };
 
   componentDidMount() {
-    this.get_user_details();
-    this.get_product_details();
+    this.get_user_details(this.get_product_details());
   }
 
   render() {
@@ -239,6 +239,8 @@ class User extends Component {
 
           </Dialog>
         </div>
+	<br/><br/>
+	Click on Products to request auction
       </div>
     );
   }
