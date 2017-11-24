@@ -9,6 +9,7 @@ import {
 } from "material-ui/Card";
 import RaisedButton from "material-ui/RaisedButton";
 import Divider from "material-ui/Divider";
+import config from "./../config";
 
 class ListingDetails extends Component {
   constructor(props) {
@@ -21,8 +22,7 @@ class ListingDetails extends Component {
   }
 
   get_details = () => {
-    var url =
-      "http://localhost:3000/api/ProductListing/" + this.state.listingId;
+    var url = config.url + "ProductListing/" + this.state.listingId;
     fetch(url)
       .then(results => {
         if (results.status != 200) {

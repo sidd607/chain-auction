@@ -15,7 +15,9 @@ import {
   CardTitle,
   CardText
 } from "material-ui/Card";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import config from "./../config";
+
 class User extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +51,8 @@ class User extends Component {
   };
 
   get_user_details = () => {
-    fetch("http://localhost:3000/api/Member")
+    var url = config.url + "Member/";
+    fetch(url)
       .then(results => {
         return results.json();
       })
@@ -69,7 +72,8 @@ class User extends Component {
   };
 
   get_product_details = () => {
-    fetch("http://localhost:3000/api/Product")
+    var url = config.url + "Product/";
+    fetch(url)
       .then(results => {
         return results.json();
       })
@@ -112,8 +116,8 @@ class User extends Component {
   };
 
   submit_auction = () => {
-    console.log(this.state);
-    fetch("http://localhost:3000/api/ProductListing", {
+    var url = config.url + "ProductListing/";
+    fetch(url, {
       body: '{"listingId": "' +
         this.state.auction_id +
         '","reservePrice": "' +

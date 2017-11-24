@@ -10,6 +10,7 @@ import {
 import RaisedButton from "material-ui/RaisedButton";
 import Divider from "material-ui/Divider";
 import { Link } from "react-router-dom";
+import config from "./../config";
 
 class UserDetails extends Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class UserDetails extends Component {
 
   get_user_details = () => {
     var user_id = this.props.match.params.id;
-    fetch("http://localhost:3000/api/Member/" + user_id)
+    var url = config.url + "Member/";
+    fetch(url + user_id)
       .then(results => {
         if (results.status != 200) {
           alert("Something Went Wrong");
@@ -41,7 +43,8 @@ class UserDetails extends Component {
   get_user_bids = () => {
     var resource_str =
       "resource:org.acme.product.auction.Member#" + this.state.user_id;
-    fetch("http://localhost:3000/api/ProductListing")
+    var url = config.url + "ProductListing/";
+    fetch(url)
       .then(results => {
         if (results.status != 200) {
           alert("Something Went Wrong!!");
@@ -55,10 +58,9 @@ class UserDetails extends Component {
         for (var i = 0; i < result.length; i++) {
           console.log(result[i]);
 
-          if("offers" in result[i])
-            var offers = result[i].offers;
-          else{
-            var offers = []
+          if ("offers" in result[i]) var offers = result[i].offers;
+          else {
+            var offers = [];
           }
           var tmp = {
             auction: result[i].listingId,
@@ -74,7 +76,7 @@ class UserDetails extends Component {
             tmp["win_bid"] = result[i].winPrice;
           }
           var cnt = 0;
-          
+
           for (var j = 0; j < offers.length; j++) {
             if (offers[j].member === resource_str) {
               tmp["offer"].push({

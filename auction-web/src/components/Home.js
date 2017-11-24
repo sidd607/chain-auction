@@ -11,6 +11,7 @@ import {
 } from "material-ui/Card";
 import RaisedButton from "material-ui/RaisedButton";
 import { Link } from "react-router-dom";
+import config from "./../config"
 
 class Home extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class Home extends Component {
   }
 
   get_auction = () => {
-    fetch("http://localhost:3000/api/ProductListing/")
+    var url = config.url + "ProductListing/"
+    fetch(url)
       .then(results => {
         if (results.status != 200) {
           alert("Something Went Wrong");

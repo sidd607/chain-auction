@@ -11,6 +11,7 @@ import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Divider from "material-ui/Divider";
 import { Link } from "react-router-dom";
+import config from "./../config";
 
 class Listing extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class Listing extends Component {
 
   get_listing_details = () => {
     var list_id = this.props.match.params.id;
-    fetch("http://localhost:3000/api/ProductListing/" + list_id)
+    var url = config.url + "ProductListing/";
+    fetch(url + list_id)
       .then(results => {
         if (results.status != 200) {
           alert("Something Went Wrong");
@@ -46,7 +48,8 @@ class Listing extends Component {
   };
 
   submit_bid = () => {
-    fetch("http://localhost:3000/api/Offer", {
+    var url = config.url + "Offer/";
+    fetch(url, {
       body: '{"bidPrice": "' +
         this.state.bid_price +
         '","listing": "' +
@@ -110,15 +113,14 @@ class Listing extends Component {
                             Bidder: <b>{bid.member.substr(41)}</b><br />
                             Bid: <b>{bid.bidPrice}</b><br />
                             TimeStamp: <b> {bid.timestamp}</b> <br />
-                            <br/>
+                            <br />
                           </div>
-                        
                         );
                       })}
                       <br />
 
                       <RaisedButton
-                        onClick = {this.get_listing_details()}
+                        onClick={this.get_listing_details()}
                         label="Refresh"
                         fullWidth={true}
                         primary={true}

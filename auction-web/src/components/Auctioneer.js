@@ -17,6 +17,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import IconButton from "material-ui/IconButton";
 import StarBorder from "material-ui/svg-icons/toggle/star-border";
 import Paper from "material-ui/Paper";
+import config from "./../config";
 
 class Auctioneer extends Component {
   constructor(props) {
@@ -32,7 +33,8 @@ class Auctioneer extends Component {
   }
 
   end_auction = auction => {
-    fetch("http://localhost:3000/api/CloseAuction", {
+    var url = config.url + "CloseAuction/"
+    fetch(url, {
       body: '{"listing":"' + auction.listingId + '"}',
       headers: {
         Accept: "application/json",
@@ -54,12 +56,12 @@ class Auctioneer extends Component {
   };
 
   approve_auction = auction => {
-    console.log("Hello World");
+    
     let post_data = {
       listing: "list1"
     };
-
-    fetch("http://localhost:3000/api/ApproveListing", {
+    var url = config.url + "ApproveListing/"
+    fetch(url, {
       body: '{"listing":"' + auction.listingId + '"}',
       headers: {
         Accept: "application/json",
@@ -85,7 +87,8 @@ class Auctioneer extends Component {
   };
 
   get_auction_listings = () => {
-    fetch("http://localhost:3000/api/ProductListing/")
+    var url = config.url + "ProductListing/"
+    fetch(url)
       .then(results => {
         return results.json();
       })
