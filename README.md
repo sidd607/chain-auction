@@ -9,7 +9,7 @@ API:  `104.211.186.61:3000`
 
 Slides: [Google Slides](https://goo.gl/rr9oTE)
 
-The demo contains 5 users along with 3 Products that can be auctioned. For see users and ownership see '104.211.186.61:3001/users'
+The demo contains 5 users along with 3 Products that can be auctioned. For see users and ownership see  `104.211.186.61:3001/users`
 
 ## Auction Process
 - The user from `/users` clicks on the product to create an Auction Listing for the product.
