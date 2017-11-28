@@ -1,0 +1,22 @@
+{
+  "name": "product",
+  "version": "0.1.1",
+  "description": "Business Network for Auction",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "sidd607",
+  "email": "siddartha.padhi@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-connector-embedded": "latest",
+    "browserfs": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}

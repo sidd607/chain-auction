@@ -1,0 +1,6 @@
+./startFabric.sh
+composer runtime install -n product -p hlfv1 -i PeerAdmin 
+composer network start -a product@0.0.1.bna -p hlfv1 -i PeerAdmin
+composer network ping --help
+composer-rest-server -p hlfv1 -n product -i admin -s adminpw -N never -w true
+
