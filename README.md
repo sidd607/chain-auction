@@ -8,6 +8,8 @@ Link: `104.211.186.61:3001`
 API:  `104.211.186.61:3000`
 
 The demo contains 5 users along with 3 Products that can be auctioned. For see users and ownership see '104.211.186.61:3001/users'
+Slides: [Google Slides](https://goo.gl/rr9oTE)
+
 
 ## Auction Process
 - The user from `/users` clicks on the product to create an Auction Listing for the product.
@@ -41,8 +43,3 @@ The Business Network definition consists of 3 major components
 - Model Files - Define the structure and realationship between model elements
 - Script Files - Implement the Business Logic for the application.
 - Access Control File - A set of access control rules that define the rights of different participants in the business network.
-
-
-
-
-
