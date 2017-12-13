@@ -71,7 +71,7 @@ class auctionTest(unittest.TestCase):
     
 
     def test_1_first_price(self):
-        return
+        
         print "First Price auction list1"
         
         create_offer("b@b.com", "list1", "1000")
@@ -101,7 +101,7 @@ class auctionTest(unittest.TestCase):
 
     
     def test_2_first_price_fail(self):
-        return
+        
         print "Reserve Not Met - Test"
         create_offer('b@b.com', 'list2', '100')
         create_offer('c@c.com', 'list2', '200')
@@ -125,7 +125,7 @@ class auctionTest(unittest.TestCase):
         print "No Winner as Reserve not met | pro2 owned by a@a.com"
 
     def test_3_no_bids(self):
-        return
+        
         end_auction("list3")
         r = requests.get("http://localhost:3000/api/Product/pro3")
         if r.status_code != 200:
@@ -143,7 +143,7 @@ class auctionTest(unittest.TestCase):
         print "No Winner as no bids | pro3 owned by a@a.com"
     
     def test_4_second_price(self):
-        return
+        
         create_offer("a@a.com", "list4", "1000")
         create_offer("c@c.com", "list4", "2000")
         create_offer("d@d.com", "list4", "3000")
@@ -179,7 +179,7 @@ class auctionTest(unittest.TestCase):
 
 
     def test_7_first_price_sealed(self):
-        return
+        
         print "First Price Sealed - Test"
         create_offer("b@b.com", "list7", "1000")
         print ""
@@ -213,7 +213,7 @@ class auctionTest(unittest.TestCase):
 
 
     def test_0_init(self):
-        return
+        
         print ("----- Testing initialization -----")
         self.clean()
         self.init()

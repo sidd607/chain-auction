@@ -1,0 +1,94 @@
+----- Auction Chain Testing -----
+
+
+----- Clearing initial data ------
+Deleting Member: a@a.com
+Deleting Member: b@b.com
+Deleting Member: c@c.com
+Deleting Member: d@d.com
+Deleting Member: e@e.com
+Deleting Asset: pro1
+Deleting Asset: pro2
+Deleting Asset: pro3
+Deleting Asset: pro4
+Deleting Asset: pro5
+Deleting Asset: pro6
+Deleting Asset: pro7
+Deleting Asset: pro8
+Deleting Asset: pro9
+Deleting Product Listing :list1
+Deleting Product Listing :list2
+Deleting Product Listing :list3
+Deleting Product Listing :list4
+Deleting Product Listing :list5
+Deleting Product Listing :list6
+Deleting Product Listing :list7
+Deleting Product Listing :list8
+Deleting Product Listing :list9
+
+
+--------- Creating Members ----------
+Member Created: User1 10000 a@a.com
+Member Created: User2 10000 b@b.com
+Member Created: User3 10000 c@c.com
+Member Created: User4 10000 d@d.com
+Member Created: User5 10000 e@e.com
+-------- Creating Products ----------
+Product Created: Pro1 Owner a@a.com
+Product Created: Pro2 Owner a@a.com
+Product Created: Pro3 Owner a@a.com
+Product Created: Pro1 Owner b@b.com
+Product Created: Pro2 Owner b@b.com
+Product Created: Pro3 Owner b@b.com
+Product Created: Pro1 Owner c@c.com
+Product Created: Pro2 Owner c@c.com
+Product Created: Pro3 Owner c@c.com
+-------- Creating Lisitng -----------
+Auction: list1 Type: FirstPice Product: Pro1 Owner a@a.com
+Auction: list2 Type: FirstPice Product: Pro2 Owner a@a.com
+Auction: list3 Type: FirstPice Product: Pro3 Owner a@a.com
+Auction: list4 Type: SecondPrice Product: Pro1 Owner b@b.com
+Auction: list5 Type: SecondPrice Product: Pro2 Owner b@b.com
+Auction: list6 Type: SecondPrice Product: Pro3 Owner b@b.com
+Auction: list7 Type: FirstPiceSealed Product: Pro1 Owner c@c.com
+Auction: list8 Type: FirstPiceSealed Product: Pro2 Owner c@c.com
+Auction: list9 Type: FirstPiceSealed Product: Pro3 Owner c@c.com
+
+
+------ First Price auction list1 ------
+-- b@b.com bids 1000
+-- c@c.com bids 2000
+-- d@d.com bids 3000
+
+-> End Auction
+-- Product pro1 is now owned by resource:org.acme.product.auction.Member#d@d.com
+-- First Price Auction winner: d@d.com @ 3000
+-- d@d.com balance: 7000
+-- a@a.com balance: 13000
+
+
+------ Second Price auction list4 ------
+-- a@a.com bids 1000
+-- c@c.com bids 2000
+-- d@d.com bids 3000
+
+-> End Auction
+-- Product pro4 is now owned by resource:org.acme.product.auction.Member#d@d.com
+-- Second Price Auction winner: d@d.com @ 2000
+-- d@d.com balance: 5000
+-- b@b.com balance: 12000
+
+
+------ First Price Sealed auction list7 ------
+-- b@b.com bids 1000
+-- d@d.com bids 2000
+-- e@e.com bids 3000
+
+-> End Auction
+-- Product pro17 is now owned by resource:org.acme.product.auction.Member#e@e.com
+-- First Price Sealed Auction winner: e@e.com @ 3000
+-- e@e.com balance: 7000
+-- c@c.com balance: 13000
+
+----------------------------------------------------------------------
+Ran 8 tests in 118.996s
